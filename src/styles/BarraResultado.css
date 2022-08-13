@@ -1,0 +1,11 @@
+.contenedor-barra-resultado {
+  height: 100px;
+  background-color: #403D39;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #FFFCF2;
+  font-size: 70px;
+  padding: 10px 20px;
+  border: 8px solid #252422;
+}
