@@ -1,14 +1,15 @@
 import React from "react";
 import "../styles/BotonesOperadores.css";
-import { generarBotones } from "../funcionalidades/generar-botones";
+import {generarBoton, generarBotones} from "../funcionalidades/generar-botones";
 
-const BotonesOperadores = ({ eventoClic }) => {
+const BotonesOperadores = ({ actualizarInput,calcularResultado }) => {
 
-  const signos = "/*-+=".split("");
+  const signos = "/*-+".split("");
 
   return (
     <div className="contenedor-botones-operadores">
-      {generarBotones(signos, eventoClic)}
+      {generarBotones(signos, actualizarInput)}
+      {generarBoton("=",calcularResultado)}
     </div>
   );
 };

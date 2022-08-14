@@ -1,7 +1,7 @@
 import Boton from "../components/Boton";
 import React from "react";
 
-const generarBoton = (simbolo, evento) => {
+export const generarBoton = (simbolo, evento) => {
   return (
     <Boton
       manejarClic={evento}

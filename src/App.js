@@ -5,16 +5,12 @@ import BarraResultado from "./components/BarraResultado";
 import BotonesEspeciales from "./components/BotonesEspeciales";
 import BotonesNumeros from "./components/BotonesNumeros";
 import BotonesOperadores from "./components/BotonesOperadores";
+import { evaluate } from "mathjs";
 
 function App() {
 
   const [expMatematica, setExpMatematica] = useState("");
   const [display, setDisplay] = useState("0");
-
-  const calcular = (expMath) => {
-    alert("Calculando: " + expMath);
-    return 0;
-  };
 
   const cambioSigno = () => {
     let numeroOpuesto = (-1)*parseFloat(display);
@@ -22,8 +18,9 @@ function App() {
   };
 
   const calcularPorcentaje = () => {
-    let resultado = calcular(expMatematica + "/100");
+    let resultado = evaluate(expMatematica + display + "/100");
     setDisplay(resultado.toString());
+    setExpMatematica("0");
   };
 
   const limpiarDisplay = () => {
@@ -32,12 +29,22 @@ function App() {
   };
 
   const agregarDisplay = (simbolo) => {
-    setDisplay(Number(display + simbolo).toString() );
-    //setExpMatematica(expMatematica + display);
+    if (display.startsWith("0")) {
+      setDisplay(Number(display + simbolo).toString() );
+    } else {
+      setDisplay(display + simbolo);
+    }
   }
 
   const agregarOperando = (operando) => {
     setExpMatematica(expMatematica + display + operando);
+    setDisplay("0");
+  };
+
+  const calcularResultado = () => {
+    let resultado = evaluate(expMatematica + display);
+    setDisplay(resultado);
+    setExpMatematica("");
   };
 
   return (
@@ -51,10 +58,11 @@ function App() {
             cambiarSigno={cambioSigno}
           />
           <BotonesNumeros
-            manejarClic={agregarDisplay}
+            actualizarInput={agregarDisplay}
           />
           <BotonesOperadores
-            eventoClic={agregarOperando}
+            actualizarInput={agregarOperando}
+            calcularResultado={calcularResultado}
           />
         </div>
       </div>
@@ -63,12 +71,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-          <BotonesEspeciales
-            limpiarDisplay={setDisplay("")}
-            calcularPorcentaje={calcularPorcentaje}
-            cambiarSigno={cambioSigno}
-          />
- */

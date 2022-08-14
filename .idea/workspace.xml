@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f78b72-e182-4a9f-9917-fe51dbbb3c60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BotonesOperadores.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/funcionalidades/generar-botones.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/BotonesEspeciales.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/BotonesNumeros.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/BotonesOperadores.css" afterDir="false" />
+    <list default="true" id="72f78b72-e182-4a9f-9917-fe51dbbb3c60" name="Changes" comment="agregados botones de la calculadora">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BarraResultado.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BarraResultado.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Boton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Boton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BotonesCalculadora.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BotonesEspeciales.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BotonesEspeciales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Boton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Boton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/BotonesCalculadora.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BotonesNumeros.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BotonesNumeros.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BotonesNumeros.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BotonesOperadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BotonesOperadores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/funcionalidades/generar-botones.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/funcionalidades/generar-botones.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +87,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660420946477</updated>
-      <workItem from="1660420947763" duration="12756000" />
+      <workItem from="1660420947763" duration="16934000" />
     </task>
+    <task id="LOCAL-00001" summary="agregados botones de la calculadora">
+      <created>1660435764398</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660435764398</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,5 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="agregados botones de la calculadora" />
+    <option name="LAST_COMMIT_MESSAGE" value="agregados botones de la calculadora" />
   </component>
 </project>
