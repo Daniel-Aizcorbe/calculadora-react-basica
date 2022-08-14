@@ -1,3 +1,10 @@
 body {
   font-family: Verdana, sans-serif;
 }
+
+.contenedor-botones {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}

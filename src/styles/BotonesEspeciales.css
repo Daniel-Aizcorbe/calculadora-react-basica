@@ -1,0 +1,8 @@
+.fila-botones-especiales {
+  display: flex;
+  flex-direction: row;
+}
+
+.boton-especial {
+
+}

@@ -5,7 +5,7 @@ const BarraResultado = ({ numero }) => {
 
   return (
     <div className="contenedor-barra-resultado">
-        {numero}
+      {numero}
     </div>
   );
 };
