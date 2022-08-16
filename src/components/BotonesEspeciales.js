@@ -6,21 +6,21 @@ const BotonesEspeciales = ({ limpiarDisplay, cambiarSigno, calcularPorcentaje })
 
   return (
     <div className="fila-botones-especiales">
-      <Boton
-        clase="boton-especial"
-        manejarClic={limpiarDisplay}
-        nombre={"AC"}
-      />
-      <Boton
-        nombre={"+/-"}
-        clase="boton-especial"
-        manejarClic={cambiarSigno}
-      />
-      <Boton
-        nombre={"%"}
-        clase="boton-especial"
-        manejarClic={calcularPorcentaje}
-      />
+        <Boton
+          clase="boton-especial"
+          manejarClic={limpiarDisplay}
+          nombre={"AC"}
+        />
+        <Boton
+          nombre={"+/-"}
+          clase="boton-especial"
+          manejarClic={cambiarSigno}
+        />
+        <Boton
+          nombre={"%"}
+          clase="boton-especial"
+          manejarClic={calcularPorcentaje}
+        />
     </div>
   );
 };

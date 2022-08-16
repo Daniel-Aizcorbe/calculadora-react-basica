@@ -1,21 +1,23 @@
-.contenedor-botones-operadores {
+.fila-botones {
   display: flex;
-  flex-direction: column;
-  width: 25%;
+  flex-direction: row;
+  height: 25%;
 }
 
-.boton-operador {
+.boton-numero {
   flex: 1 1;
   height: 100%;
   cursor: pointer;
   user-select: none;
   color: #252422;
   font-size: 30px;
-  background-color: #EB5E28;
+  background-color: #FFFCF2;
 }
 
-.boton-operador:active {
+.boton-numero:active {
   background-color: #CCC5B9;
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+

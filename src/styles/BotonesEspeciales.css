@@ -1,8 +1,21 @@
 .fila-botones-especiales {
   display: flex;
   flex-direction: row;
+  height: 25%;
 }
 
 .boton-especial {
   flex: 1 1;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  color: #252422;
+  font-size: 30px;
+  background-color: #CCC5B9;
+}
+
+.boton-especial:active {
+  background-color: #403D39;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

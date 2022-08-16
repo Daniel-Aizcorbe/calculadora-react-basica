@@ -1,14 +1,15 @@
 import React from "react";
 import "../styles/BotonesNumeros.css";
-import { generarBotones } from "../funcionalidades/generar-botones"
+import FilaBotones from "./FilaBotones";
 
 const BotonesNumeros = ({ actualizarInput }) => {
 
-  const simbolos = "7894561230.".split("");
-
   return (
     <div className="contenedor-botones-numeros">
-      {generarBotones(simbolos,actualizarInput,"boton-numero")}
+      <FilaBotones numeros={"789"} manejarClic={actualizarInput}/>
+      <FilaBotones numeros={"456"} manejarClic={actualizarInput}/>
+      <FilaBotones numeros={"123"} manejarClic={actualizarInput}/>
+      <FilaBotones numeros={"0."} manejarClic={actualizarInput} />
     </div>
   );
 };
