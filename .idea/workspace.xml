@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72f78b72-e182-4a9f-9917-fe51dbbb3c60" name="Changes" comment="add propiedades en `package.json` para hacer el deploy de la pagina">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -121,7 +128,8 @@
       <updated>1660420946477</updated>
       <workItem from="1660420947763" duration="18141000" />
       <workItem from="1660604556429" duration="11845000" />
-      <workItem from="1660619821487" duration="3154000" />
+      <workItem from="1660619821487" duration="4533000" />
+      <workItem from="1660629596652" duration="898000" />
     </task>
     <task id="LOCAL-00001" summary="agregados botones de la calculadora">
       <created>1660435764398</created>
@@ -165,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660623531995</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add propiedades en `package.json` para hacer el deploy de la pagina">
+      <created>1660624906128</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660624906128</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +191,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/gh-pages" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
