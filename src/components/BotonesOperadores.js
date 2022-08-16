@@ -8,8 +8,8 @@ const BotonesOperadores = ({ actualizarInput,calcularResultado }) => {
 
   return (
     <div className="contenedor-botones-operadores">
-      {generarBotones(signos, actualizarInput)}
-      {generarBoton("=",calcularResultado)}
+      {generarBotones(signos, actualizarInput,"boton-operador")}
+      {generarBoton("=",calcularResultado,"boton-operador")}
     </div>
   );
 };

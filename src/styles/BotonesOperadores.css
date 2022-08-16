@@ -1,0 +1,4 @@
+.contenedor-botones-operadores {
+  display: flex;
+  flex-direction: column;
+}

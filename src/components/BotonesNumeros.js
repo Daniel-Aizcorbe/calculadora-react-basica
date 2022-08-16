@@ -4,11 +4,11 @@ import { generarBotones } from "../funcionalidades/generar-botones"
 
 const BotonesNumeros = ({ actualizarInput }) => {
 
-  const simbolos = ".0123456789".split("");
+  const simbolos = "7894561230.".split("");
 
   return (
     <div className="contenedor-botones-numeros">
-      {generarBotones(simbolos,actualizarInput)}
+      {generarBotones(simbolos,actualizarInput,"boton-numero")}
     </div>
   );
 };

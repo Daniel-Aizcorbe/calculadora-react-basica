@@ -1,15 +1,16 @@
 import './styles/App.css';
 import React, {useState} from "react";
+import { evaluate } from "mathjs";
 
 import BarraResultado from "./components/BarraResultado";
 import BotonesEspeciales from "./components/BotonesEspeciales";
 import BotonesNumeros from "./components/BotonesNumeros";
 import BotonesOperadores from "./components/BotonesOperadores";
-import { evaluate } from "mathjs";
 
-function App() {
+const App = () => {
 
   const [expMatematica, setExpMatematica] = useState("");
+
   const [display, setDisplay] = useState("0");
 
   const cambioSigno = () => {
@@ -30,11 +31,15 @@ function App() {
 
   const agregarDisplay = (simbolo) => {
     if (display.startsWith("0")) {
-      setDisplay(Number(display + simbolo).toString() );
+      if(simbolo === ".") {
+        setDisplay("0.");
+      } else {
+        setDisplay(Number(display + simbolo).toString() );
+      }
     } else {
       setDisplay(display + simbolo);
     }
-  }
+  };
 
   const agregarOperando = (operando) => {
     setExpMatematica(expMatematica + display + operando);
@@ -60,11 +65,11 @@ function App() {
           <BotonesNumeros
             actualizarInput={agregarDisplay}
           />
-          <BotonesOperadores
-            actualizarInput={agregarOperando}
-            calcularResultado={calcularResultado}
-          />
         </div>
+        <BotonesOperadores
+          actualizarInput={agregarOperando}
+          calcularResultado={calcularResultado}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+.contenedor-botones-numeros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.contenedor-botones-numeros .boton-numero {
+  width: 33.3%;
+}
+
+.contenedor-botones-numeros .boton-numero:nth-child(10) {
+  width: 66.6%;
+}
