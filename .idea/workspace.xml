@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f78b72-e182-4a9f-9917-fe51dbbb3c60" name="Changes" comment="Estilos finales a todo">
+    <list default="true" id="72f78b72-e182-4a9f-9917-fe51dbbb3c60" name="Changes" comment="add propiedades en `package.json` para hacer el deploy de la pagina">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +63,16 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -74,6 +83,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.predeploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,7 +110,7 @@
       <updated>1660420946477</updated>
       <workItem from="1660420947763" duration="18141000" />
       <workItem from="1660604556429" duration="11845000" />
-      <workItem from="1660619821487" duration="423000" />
+      <workItem from="1660619821487" duration="1770000" />
     </task>
     <task id="LOCAL-00001" summary="agregados botones de la calculadora">
       <created>1660435764398</created>
@@ -115,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660616358129</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add propiedades en `package.json` para hacer el deploy de la pagina">
+      <created>1660620313248</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660620313248</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +170,7 @@
     <MESSAGE value="funcionalidades de los botones" />
     <MESSAGE value="add alineacion de botones y fix problemas con el &quot;0.&quot;" />
     <MESSAGE value="Estilos finales a todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estilos finales a todo" />
+    <MESSAGE value="add propiedades en `package.json` para hacer el deploy de la pagina" />
+    <option name="LAST_COMMIT_MESSAGE" value="add propiedades en `package.json` para hacer el deploy de la pagina" />
   </component>
 </project>
