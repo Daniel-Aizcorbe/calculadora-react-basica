@@ -63,6 +63,16 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -96,6 +106,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.predeploy" />
       </list>
     </recent_temporary>
@@ -110,7 +121,7 @@
       <updated>1660420946477</updated>
       <workItem from="1660420947763" duration="18141000" />
       <workItem from="1660604556429" duration="11845000" />
-      <workItem from="1660619821487" duration="1770000" />
+      <workItem from="1660619821487" duration="3154000" />
     </task>
     <task id="LOCAL-00001" summary="agregados botones de la calculadora">
       <created>1660435764398</created>
@@ -147,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660620313248</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add propiedades en `package.json` para hacer el deploy de la pagina">
+      <created>1660623531995</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660623531995</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
