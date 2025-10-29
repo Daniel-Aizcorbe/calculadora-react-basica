@@ -1,23 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Ciudades y Colegios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9fb;
+      margin: 0;
+      padding: 20px;
+    }
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    .container {
+      max-width: 500px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: auto;
+    }
 
-    <title>Calculadora básica ReactJS</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    h2 {
+      text-align: center;
+      color: #333;
+    }
 
-  </body>
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #btnSeleccionar {
+      background: #007bff;
+      color: white;
+    }
+
+    #btnSeleccionar:hover {
+      background: #0069d9;
+    }
+
+    #btnLimpiar {
+      background: #dc3545;
+      color: white;
+    }
+
+    #btnLimpiar:hover {
+      background: #c82333;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background: #007bff;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 15px;
+      }
+      button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Seleccionar Colegio</h2>
+
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad">
+      <option value="">Seleccionar ciudad...</option>
+    </select>
+
+    <label for="colegio">Colegio:</label>
+    <select id="colegio" disabled>
+      <option value="">Seleccionar colegio...</option>
+    </select>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" readonly placeholder="Se mostrará la dirección">
+
+    <div class="buttons">
+      <button id="btnSeleccionar">Seleccionar</button>
+      <button id="btnLimpiar">Limpiar</button>
+    </div>
+
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Colegio</th>
+          <th>Dirección</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    // --- Datos base (simulan la hoja "Datos") ---
+    const datos = [
+      { ciudad: "Bogotá", colegio: "Colegio Andino", direccion: "Cra 51 # 218-50" },
+      { ciudad: "Bogotá", colegio: "Colegio San Carlos", direccion: "Km 1 Vía La Calera" },
+      { ciudad: "Bogotá", colegio: "Gimnasio Moderno", direccion: "Cra 9 # 74-99" },
+      { ciudad: "Medellín", colegio: "Colegio Colombo Británico", direccion: "Calle 18 Sur # 48-120" },
+      { ciudad: "Medellín", colegio: "Colegio Montessori", direccion: "Cra 43A # 1 Sur-120" },
+      { ciudad: "Cali", colegio: "Colegio Alemán", direccion: "Calle 5 # 122-50" },
+      { ciudad: "Cali", colegio: "Colegio Jefferson", direccion: "Av. Cañasgordas # 122-00" }
+    ];
+
+    // --- Referencias ---
+    const ciudadSelect = document.getElementById('ciudad');
+    const colegioSelect = document.getElementById('colegio');
+    const direccionInput = document.getElementById('direccion');
+    const tablaBody = document.querySelector('#tabla tbody');
+    const btnSeleccionar = document.getElementById('btnSeleccionar');
+    const btnLimpiar = document.getElementById('btnLimpiar');
+
+    // --- Inicializar ciudades ---
+    const ciudadesUnicas = [...new Set(datos.map(d => d.ciudad))];
+    ciudadesUnicas.forEach(c => {
+      const option = document.createElement('option');
+      option.value = c;
+      option.textContent = c;
+      ciudadSelect.appendChild(option);
+    });
+
+    // --- Evento: cambio de ciudad ---
+    ciudadSelect.addEventListener('change', () => {
+      const ciudad = ciudadSelect.value;
+      direccionInput.value = "";
+      colegioSelect.innerHTML = '<option value="">Seleccionar colegio...</option>';
+      
+      if (!ciudad) {
+        colegioSelect.disabled = true;
+        return;
+      }
+
+      const colegios = datos.filter(d => d.ciudad === ciudad);
+      colegios.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.colegio;
+        opt.textContent = c.colegio;
+        colegioSelect.appendChild(opt);
+      });
+
+      colegioSelect.disabled = false;
+      colegioSelect.value = "";
+    });
+
+    // --- Evento: cambio de colegio ---
+    colegioSelect.addEventListener('change', () => {
+      const ciudad = ciudadSelect.value;
+      const colegio = colegioSelect.value;
+      const item = datos.find(d => d.ciudad === ciudad && d.colegio === colegio);
+      direccionInput.value = item ? item.direccion : "";
+    });
+
+    // --- Botón: Seleccionar ---
+    btnSeleccionar.addEventListener('click', () => {
+      const colegio = colegioSelect.value;
+      const direccion = direccionInput.value;
+
+      if (!colegio || !direccion) {
+        alert("Selecciona una ciudad y un colegio primero.");
+        return;
+      }
+
+      const fila = document.createElement('tr');
+      fila.innerHTML = `<td>${colegio}</td><td>${direccion}</td>`;
+      tablaBody.appendChild(fila);
+    });
+
+    // --- Botón: Limpiar ---
+    btnLimpiar.addEventListener('click', () => {
+      tablaBody.innerHTML = "";
+    });
+  </script>
+
+</body>
 </html>
